@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gutter-lg: 4rem;
+  --gutter-md: 3rem;
+  --gutter-sm: 1rem;
+  --gutter-xm: 1rem;
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+body {
+  background: var(--color-black);
+  font: 16px verdana;
+  color: var(--color-white);
+}
+
+.banner {
+  display: flex;
+  height: 100vh;
+}
+
+.button {
+  margin: auto;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.button-wrap {
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__like-text {
+  display: block;
+  color: var(--color-black);
+  background: var(--color-white);
+  width: var(--gutter-lg);
+  height: var(--gutter-lg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
