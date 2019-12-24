@@ -33,10 +33,10 @@ body {
 }
 
 .button-wrap {
-  width: 140px;
-  height: 140px;
+  width: 128px;
+  height: 128px;
   margin: auto;
-  background: orange;
+  /* background: orange; */
   display: flex;
   justify-content: center;
   align-items: center;
