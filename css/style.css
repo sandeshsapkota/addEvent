@@ -32,14 +32,23 @@ body {
   transition: all 0.2s ease-out;
 }
 
-.button-wrap {
-  width: 140px;
-  height: 140px;
+.button-wrap-wrapper {
+  width: 192px;
+  height: 192px;
+  border: 1px dashed #fff;
   margin: auto;
-  background: orange;
+  display: flex;
+}
+
+.button-wrap {
+  width: 128px;
+  height: 128px;
+  margin: auto;
+  /* background: orange; */
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px dashed #fff;
 }
 
 .button__like-text {
