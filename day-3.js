@@ -1,12 +1,19 @@
-const button = document.querySelector(".button");
-let { width, height, x: buttonX, y: buttonY } = button.getBoundingClientRect(); // gives you width, height, left-X,top-y of the button
+const button = document.querySelector(".button__like-text");
+const cCircle = document.querySelector(".c-circle");
+let {
+  width,
+  height,
+  x: centerPointX,
+  y: centerPointY
+} = button.getBoundingClientRect(); // gives you width, height, left-X,top-y of the button
+console.log(width, height);
 
-buttonX = buttonX + width / 2; //  center point of button on x-axis
-buttonY = buttonY + height / 2; //  center point of button on y-axis
+centerPointX = centerPointX + width / 2; //  center point of button on x-axis
+centerPointY = centerPointY + height / 2; //  center point of button on y-axis
 
 /*************** Functions ***************/
 
-let distance = width;
+let distance = 90;
 let mouseHasEntered = true;
 let mouseIsInButtonTerritory;
 
@@ -14,12 +21,12 @@ function mouseMove(e) {
   const x = e.x; // current x of cursor
   const y = e.y; // current y of cursor
 
-  const leftBorderLine = buttonX - distance;
-  const rightBorderLine = buttonX + distance;
-  const topBorderLine = buttonY - distance;
-  const bottomBorderline = buttonY + distance;
-  const xWalk = (x - buttonX) / 2; // the distance to move the button when mouse moves on X axis
-  const yWalk = (y - buttonY) / 2; // the distance to move the button when mouse moves on Y axis
+  const leftBorderLine = centerPointX - distance;
+  const rightBorderLine = centerPointX + distance;
+  const topBorderLine = centerPointY - distance;
+  const bottomBorderline = centerPointY + distance;
+  const xWalk = (x - centerPointX) / 2; // the distance to move the button when mouse moves on X axis
+  const yWalk = (y - centerPointY) / 2; // the distance to move the button when mouse moves on Y axis
 
   mouseIsInButtonTerritory =
     x > leftBorderLine &&
@@ -32,7 +39,7 @@ function mouseMove(e) {
       // this must happen only once to create outside borderline
       //creating another level borderline by incresing distance;
       // while cursor is returing the button comes out of nearest border-line and return from this borderline
-      distance = distance + distance;
+      distance = 160;
       mouseHasEntered = false;
     }
     catchCursor(xWalk, yWalk); // call the function when mouse in in the button's territory
@@ -49,6 +56,7 @@ function catchCursor(xWalk, yWalk) {
 function resetPositon() {
   // resets the postion of the button as it was initial.
   button.style.transform = `translate(${0}px, ${0}px)`;
+  if (!mouseHasEntered) distance = 80;
   mouseHasEntered = true;
   // when button is return to it's position (mouseHasEntered = true) lets to increase the initial borderline of button for the next time
 }
@@ -57,5 +65,3 @@ function resetPositon() {
 
 window.addEventListener("mousemove", mouseMove);
 window.addEventListener("mouseout", resetPositon);
-
-
