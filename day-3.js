@@ -62,6 +62,5 @@ function resetPositon() {
 }
 
 /*************** Event-handler ***************/
-
 window.addEventListener("mousemove", mouseMove);
 window.addEventListener("mouseout", resetPositon);
