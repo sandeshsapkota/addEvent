@@ -17,7 +17,7 @@
 
 body {
   color: var(--color-black);
-  font: 16px verdana;
+  font: 16px "Cabin", sans-serif;
   overflow: hidden;
 }
 
@@ -32,31 +32,26 @@ body {
 
 .header {
   position: fixed;
-  padding: 24px;
+  padding: 48px 24px;
   z-index: 1;
   width: 100%;
 }
 
-.nav {
-  margin-left: auto;
-}
-
-.nav {
-  margin-left: auto;
-}
 .nav__menu {
   display: flex;
   list-style: none;
-  margin-left: auto;
+  justify-content: center;
 }
 
 .nav__item {
+  margin: 0 16px;
 }
 
 .nav__link {
   color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 4px;
+  font-size: 14px;
 }
 
 .banner {
@@ -95,7 +90,8 @@ body {
   position: relative;
   transition: all 0.3s ease-out;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 .button__num-text {
   display: block;
@@ -114,15 +110,16 @@ body {
   z-index: 2;
   width: 10px;
   height: 10px;
-  background: #fff;
   border-radius: 50%;
+  pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: 0.4s transform ease-in-out;
+  background: rgba(255, 255, 255, 0.4);
+  transition: height 0.4s, width 0.4s, background-color 0.4s;
 }
 
 .c-circle--big {
-  width: 88px;
-  height: 88px;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translate(-50%, -50%) scale(1.2);
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: height 0.4s, width 0.4s, background-color 0.4s, position 0.9;
 }

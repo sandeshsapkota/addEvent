@@ -64,29 +64,18 @@ function resetPositon() {
 function positionTheCircle(e) {
   cCircle.style.left = `${e.x}px`;
   cCircle.style.top = `${e.y}px`;
-  // if (mouseIsInButtonTerritory || e.target.classList.contains("nav__link")) {
-  //   cCircle.classList.add("c-circle--big");
-  // } else {
-  //   cCircle.classList.remove("c-circle--big");
-  // }
+  if (mouseIsInButtonTerritory || e.target.classList.contains("nav__link")) {
+    console.log("hi");
+    cCircle.classList.add("c-circle--big");
+  } else {
+    cCircle.classList.remove("c-circle--big");
+  }
 }
 
 /*************** Event-handler ***************/
+
 window.addEventListener("mousemove", function(e) {
   positionTheCircle(e);
   mouseMove(e);
 });
 window.addEventListener("mouseout", resetPositon);
-
-const navLinks = document.querySelectorAll(".nav__link");
-
-navLinks.forEach(cur => {
-  cur.addEventListener("mouseenter", function() {
-    cCircle.classList.add("c-cirle--big");
-    console.log("entered");
-  });
-
-  cur.addEventListener("mouseout", function() {
-    cCircle.classList.remove("c-cirle--big");
-  });
-});
