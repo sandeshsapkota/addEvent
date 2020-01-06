@@ -6,7 +6,6 @@ let {
   x: centerPointX,
   y: centerPointY
 } = button.getBoundingClientRect(); // gives you width, height, left-X,top-y of the button
-console.log(width, height);
 
 centerPointX = centerPointX + width / 2; //  center point of button on x-axis
 centerPointY = centerPointY + height / 2; //  center point of button on y-axis
@@ -20,7 +19,6 @@ let mouseIsInButtonTerritory;
 function mouseMove(e) {
   const x = e.x; // current x of cursor
   const y = e.y; // current y of cursor
-
   const leftBorderLine = centerPointX - distance;
   const rightBorderLine = centerPointX + distance;
   const topBorderLine = centerPointY - distance;
@@ -41,6 +39,7 @@ function mouseMove(e) {
       // while cursor is returing the button comes out of nearest border-line and return from this borderline
       distance = 160;
       mouseHasEntered = false;
+      // cCircle.classList.add("c-circle--big");
     }
     catchCursor(xWalk, yWalk); // call the function when mouse in in the button's territory
   } else {
@@ -59,8 +58,35 @@ function resetPositon() {
   if (!mouseHasEntered) distance = 80;
   mouseHasEntered = true;
   // when button is return to it's position (mouseHasEntered = true) lets to increase the initial borderline of button for the next time
+  // cCircle.classList.remove("c-circle--big");
+}
+
+function positionTheCircle(e) {
+  cCircle.style.left = `${e.x}px`;
+  cCircle.style.top = `${e.y}px`;
+  // if (mouseIsInButtonTerritory || e.target.classList.contains("nav__link")) {
+  //   cCircle.classList.add("c-circle--big");
+  // } else {
+  //   cCircle.classList.remove("c-circle--big");
+  // }
 }
 
 /*************** Event-handler ***************/
-window.addEventListener("mousemove", mouseMove);
+window.addEventListener("mousemove", function(e) {
+  positionTheCircle(e);
+  mouseMove(e);
+});
 window.addEventListener("mouseout", resetPositon);
+
+const navLinks = document.querySelectorAll(".nav__link");
+
+navLinks.forEach(cur => {
+  cur.addEventListener("mouseenter", function() {
+    cCircle.classList.add("c-cirle--big");
+    console.log("entered");
+  });
+
+  cur.addEventListener("mouseout", function() {
+    cCircle.classList.remove("c-cirle--big");
+  });
+});
