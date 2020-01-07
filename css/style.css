@@ -7,10 +7,6 @@
 }
 
 :root {
-  --gutter-lg: 4rem;
-  --gutter-md: 3rem;
-  --gutter-sm: 1rem;
-  --gutter-xm: 1rem;
   --color-white: #fff;
   --color-black: #000;
 }
@@ -61,8 +57,14 @@ body {
   padding-left: 40px;
   padding-bottom: 20px;
   align-items: flex-end;
-  /* background-color: black; */
-  background-image: url("../images/img-1.jpg");
+  background-image: linear-gradient(
+    to right bottom,
+    #051937,
+    #071e3f,
+    #0a2348,
+    #0d2850,
+    #102d59
+  );
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -88,7 +90,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: .1s  ease-in-out;
+  transition: 0.2s transform;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -114,7 +116,7 @@ body {
   pointer-events: none;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.4);
-  transition: height 0.3s, width 0.3s, background-color 0.3s;
+  transition: height 0.4s, width 0.4s, background-color 0.4s, all 0.2s;
   z-index: 9999;
 }
 

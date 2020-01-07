@@ -39,7 +39,6 @@ function mouseMove(e) {
       // while cursor is returing the button comes out of nearest border-line and return from this borderline
       distance = 160;
       mouseHasEntered = false;
-      // cCircle.classList.add("c-circle--big");
     }
     catchCursor(xWalk, yWalk); // call the function when mouse in in the button's territory
   } else {
@@ -58,7 +57,6 @@ function resetPositon() {
   if (!mouseHasEntered) distance = 80;
   mouseHasEntered = true;
   // when button is return to it's position (mouseHasEntered = true) lets to increase the initial borderline of button for the next time
-  // cCircle.classList.remove("c-circle--big");
 }
 
 function positionTheCircle(e) {
