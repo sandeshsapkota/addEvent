@@ -88,7 +88,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all 0.3s ease-out;
+  transition: .1s  ease-in-out;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -114,12 +114,13 @@ body {
   pointer-events: none;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.4);
-  transition: height 0.4s, width 0.4s, background-color 0.4s;
+  transition: height 0.3s, width 0.3s, background-color 0.3s;
+  z-index: 9999;
 }
 
 .c-circle--big {
   width: 100px;
   height: 100px;
   background: rgba(255, 255, 255, 0.03);
-  transition: height 0.4s, width 0.4s, background-color 0.4s, position 0.9;
+  transition: height 0.4s, width 0.4s, background-color 0.4s;
 }
